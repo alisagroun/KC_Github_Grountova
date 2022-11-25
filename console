@@ -1,0 +1,50 @@
+using System;
+using System.IO;
+using System.Threading.Tasks;
+
+namespace KC_Github_Grountova
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            string a1, a2, a, b, name;
+            a1 = "";
+            a2 = "";
+            a = "A";
+            b = "B";
+            Console.WriteLine("Name: ");
+            name = Console.ReadLine();
+            Console.WriteLine("In welchen Editor kann man Python schreiben?");
+            Console.WriteLine("A: Visual Studio; B: Visual Code");
+            a1 = Console.ReadLine();
+            if (a1 == a)
+            {
+                Console.WriteLine("Falsch!");
+            }
+            else if (a1 == b)
+            {
+                Console.WriteLine("Richtig!");
+            }
+            Console.WriteLine("Wann wurde  Python erfunden?");
+            Console.WriteLine("A: 90-er; B: 00-er");
+            a2 = Console.ReadLine();
+            if (a2 == a)
+            {
+                Console.WriteLine("Richtig!");
+            }
+            else if (a2 == b)
+            {
+                Console.WriteLine("Falsch!");
+            }
+            string[] erg = { a1, a2 };
+
+            await File.WriteAllLinesAsync(name + ".txt", erg);
+            Console.WriteLine("Ihre Ergebnisse wurden in eine Datei " +name+".txt ausgegeben!");
+
+            //ausgabe der ergebni in eine datei
+
+        }
+
+    }
+}
